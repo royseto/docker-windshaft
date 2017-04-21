@@ -1,8 +1,6 @@
-FROM node:0.10-slim
+FROM node:7.9-slim
 
-MAINTAINER Azavea <systems@azavea.com>
-
-ENV WINDSHAFT_VERSION 0.36.0
+ENV WINDSHAFT_VERSION 3.1.0
 
 RUN mkdir -p /opt/windshaft
 
@@ -11,6 +9,7 @@ WORKDIR /opt/windshaft
 RUN set -ex \
   && buildDeps=' \
     build-essential \
+    checkinstall \
     git-core \
     libcairo2-dev \
     libpango1.0-dev \
