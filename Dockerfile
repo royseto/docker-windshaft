@@ -1,4 +1,4 @@
-FROM node:7.9-slim
+FROM node:6.10-slim
 
 ENV WINDSHAFT_VERSION 3.1.0
 
