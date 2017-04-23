@@ -1,6 +1,7 @@
 FROM node:6.10-slim
 
 ENV WINDSHAFT_VERSION 3.1.0
+ENV EXPRESS_VERSION 4.15.2
 
 RUN mkdir -p /opt/windshaft
 
@@ -25,7 +26,8 @@ RUN set -ex \
     ' \
   && apt-get update && apt-get install -y ${buildDeps} ${deps} --no-install-recommends \
   && rm -rf /var/lib/apt/lists/* \
-  && npm install --unsafe-perm windshaft@${WINDSHAFT_VERSION} \
+  && npm install --unsafe-perm express@{EXPRESS_VERSION} \
+     windshaft@${WINDSHAFT_VERSION} \
   && apt-get purge -y --auto-remove ${buildDeps}
 
 EXPOSE 5000
