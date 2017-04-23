@@ -28,7 +28,7 @@ RUN set -ex \
   && rm -rf /var/lib/apt/lists/* \
   && npm install --unsafe-perm express@${EXPRESS_VERSION} \
      windshaft@${WINDSHAFT_VERSION} \
-     body-parser
+     body-parser \
   && apt-get purge -y --auto-remove ${buildDeps}
 
 COPY upgrade_glibc.sh /tmp
