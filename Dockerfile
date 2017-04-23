@@ -31,7 +31,7 @@ RUN set -ex \
      body-parser \
   && apt-get purge -y --auto-remove ${buildDeps}
 
-COPY upgrade_glibc.sh /tmp
+COPY upgrade_glibc.sh /tmp/
 RUN /tmp/upgrade_glibc.sh && rm -f /tmp/upgrade_glibc.sh
 
 EXPOSE 5000
