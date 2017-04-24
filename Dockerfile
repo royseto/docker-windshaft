@@ -30,6 +30,9 @@ RUN set -ex \
      windshaft@${WINDSHAFT_VERSION} \
      body-parser
 
+# Upgrade glibc on Debian Jessie to work around
+# https://github.com/mapnik/node-mapnik/issues/700
+
 COPY upgrade_glibc.sh /tmp/
 RUN /tmp/upgrade_glibc.sh && rm -f /tmp/upgrade_glibc.sh
 
